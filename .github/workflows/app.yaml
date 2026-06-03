@@ -1,0 +1,35 @@
+name: Deploy to Linode
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+
+      - name: Deploy
+        run: |
+            cd /home/githubrunner/framework-client
+            git pull
+            cp /curriki/client/.env.local .env.local
+            cp /curriki/client/.env .env
+            docker build -t currikiprod-client .
+            docker tag currikiprod-client quay.io/curriki/client:frame-new
+            docker push quay.io/curriki/client:frame-new
+
+            echo "Updating Docker Swarm Stack..."
+            # Updating Server
+            # docker service update --image quay.io/curriki/client:frame-new currikistack_currikiprod-client
+
+            
+            
+            
