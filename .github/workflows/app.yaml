@@ -28,8 +28,8 @@ jobs:
             docker push quay.io/curriki/client:frame-new
 
             echo "Updating Docker Swarm Stack..."
-            # Updating Server
-            # docker service update --image quay.io/curriki/client:frame-new currikistack_currikiprod-client
+            # Updating Client
+            docker service update --image quay.io/curriki/client:frame-new currikistack_currikiprod-client
 
             
             
