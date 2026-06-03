@@ -19,6 +19,7 @@ jobs:
       - name: Deploy
         run: |
             cd /home/githubrunner/framework-client
+            git config --global --add safe.directory /home/githubrunner/framework-client
             git pull
             cp /curriki/client/.env.local .env.local
             cp /curriki/client/.env .env
