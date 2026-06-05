@@ -178,8 +178,7 @@ const ResourceCardDropdown = (props) => {
         )}
         {(Object.keys(teamPermission).length
           ? teamPermission?.Team?.includes("team:publish-activity")
-          : permission?.Activity?.includes("activity:share")) &&
-          lmsSettings.length !== 0 && (
+          : permission?.Activity?.includes("activity:share")) && (
             <li className="dropdown-submenu send">
               <a tabIndex="-1" className="dropdown-item">
                 <PublishSmSvg
