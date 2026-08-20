@@ -30,6 +30,8 @@ import { Editor } from "@tinymce/tinymce-react";
 import BrandingPage from "containers/Branding";
 import { getGlobalColor } from "containers/App/DynamicBrandingApply";
 import ResetSmSvg from "iconLibrary/mainContainer/ResetSmSvg";
+import defaultOrgLogo from "assets/images/studio_new_logo.png";
+import defaultOrgFavicon from "assets/images/logo.svg";
 
 export default function CreateOrg(prop) {
   const { editMode } = prop;
@@ -220,10 +222,10 @@ export default function CreateOrg(prop) {
         initialValues={{
           image: editMode
             ? activeEdit.image
-            : "https://dev.currikistudio.org/api/storage/organizations/H01h34rZGV6gyMayurX8dwpkXZd4X3c0n8NJiUXu.png",
+            : defaultOrgLogo,
           favicon: editMode
             ? activeEdit?.favicon
-            : "https://dev.currikistudio.org/api/storage/organizations/QqwMYyeWq7WxQHzy7LDdI0mRBBA3g2qnLm2wd4Ib.svg",
+            : defaultOrgFavicon,
           name: editMode ? activeEdit?.name : "",
           description: editMode ? activeEdit?.description : "",
           domain: editMode ? activeEdit?.domain : "",
@@ -1247,17 +1249,17 @@ export default function CreateOrg(prop) {
                         onClick={() => {
                           setFieldValue(
                             "favicon",
-                            "https://dev.currikistudio.org/api/storage/organizations/QqwMYyeWq7WxQHzy7LDdI0mRBBA3g2qnLm2wd4Ib.svg"
+                            defaultOrgFavicon
                           );
                           setFieldValue(
                             "image",
-                            "https://dev.currikistudio.org/api/storage/organizations/H01h34rZGV6gyMayurX8dwpkXZd4X3c0n8NJiUXu.png"
+                            defaultOrgLogo
                           );
                           setFaviconActive(
-                            "https://dev.currikistudio.org/api/storage/organizations/QqwMYyeWq7WxQHzy7LDdI0mRBBA3g2qnLm2wd4Ib.svg"
+                            defaultOrgFavicon
                           );
                           setImgActive(
-                            "https://dev.currikistudio.org/api/storage/organizations/H01h34rZGV6gyMayurX8dwpkXZd4X3c0n8NJiUXu.png"
+                            defaultOrgLogo
                           );
                         }}
                         type="button"

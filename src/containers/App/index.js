@@ -257,9 +257,6 @@ function App(props) {
             <p>
               You cannot create or edit CurrikiStudio activities on a mobile device, but you can view existing activities. If you want to create or edit activities, please use a larger screen or tablet.
             </p>
-            <p>
-              If you would like to learn more, please click <a href="http://www.currikistudio.org/help">here</a>.
-            </p>
           </div>
         </div>
       )}

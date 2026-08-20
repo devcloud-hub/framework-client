@@ -93,7 +93,7 @@ function MsTeamActivityLaunch({match}) {
       <div className="gclass-activity-container">
         <section className="main-page-content preview iframe-height-resource-shared defaultcontainer msteams-padding">
           <Helmet>
-            <script src="https://dev.currikistudio.org/api/storage/h5p/h5p-core/js/h5p-resizer.js" charset="UTF-8" />
+            <script src={`https://${window.location.hostname}/api/storage/h5p/h5p-core/js/h5p-resizer.js`} charset="UTF-8" />
           </Helmet>
           <div className="flex-container previews">
             <div className="activity-bg left-vdo msteams-width">

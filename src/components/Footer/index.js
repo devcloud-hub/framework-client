@@ -87,30 +87,6 @@ function Footer() {
         >
           Privacy Policy
         </a>
-
-        <a
-          className="footer-link"
-          onClick={() => {
-            Swal.fire({
-              customClass: "help-redirect-icon",
-              text:
-                "Curriki Help Center will open in a new tab in your browser. Click Open to proceed or Cancel to stay where you are.",
-              showCancelButton: true,
-              confirmButtonText: "Open",
-            }).then((result) => {
-              if (result.isConfirmed) {
-                window.open(
-                  "https://www.currikistudio.org/help/",
-                  "_blank",
-                );
-              } else if (result.isDenied) {
-                Swal.close();
-              }
-            });
-          }}
-        >
-          Help Center
-        </a>
       </footer>
       <div className="img-">
         <span>Powered by</span>
