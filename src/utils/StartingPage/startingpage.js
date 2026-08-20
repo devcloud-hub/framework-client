@@ -9,7 +9,6 @@ import './startingpage.scss';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PlusXlSvg from 'iconLibrary/mainContainer/PlusXlSvg';
-import HelpXlSvg from 'iconLibrary/mainContainer/HelpXlSvg';
 
 const StartingPage = ({
   type,
@@ -49,10 +48,6 @@ const StartingPage = ({
               </h6>
             </>
           )}
-          <p className="help-text">
-            Feeling lost?
-            <strong> Go to our Help Center to learn more.</strong>
-          </p>
         </div>
         <div>
           <div className="section-btn create-new-btn" onClick={onClick}>
@@ -60,10 +55,6 @@ const StartingPage = ({
 
             <span>{createBtnTitle}</span>
           </div>
-          <a href="https://www.currikistudio.org/help/" rel="noreferrer" target="_blank" className="section-btn ">
-            <HelpXlSvg primaryColor={primaryColor} />
-            <span>{helpBtnTitle}</span>
-          </a>
         </div>
       </div>
     </div>

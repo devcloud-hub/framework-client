@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
-import Swal from "sweetalert2";
 import { SHOW_HELP } from "store/actionTypes";
 import { logoutAction } from "store/actions/auth";
 import { toggleSideBar } from "store/actions/msTeams";
@@ -15,7 +14,6 @@ import MultitenancyDropdown from "./multitenancyDropdown";
 
 import "./style.scss";
 import { getGlobalColor } from "containers/App/DynamicBrandingApply";
-import HelpSvg from "iconLibrary/header/HelpSvg";
 import EditMdSvg from "iconLibrary/mainContainer/EditMdSvg";
 import ChangePasswordMdSvg from "iconLibrary/header/ChangePasswordMdSvg";
 import LogoutMdSvg from "iconLibrary/header/LogoutMdSvg";
@@ -121,35 +119,6 @@ function Header(props) {
                   </Dropdown.Menu>
                 </Dropdown>
               </li> */}
-              <li>
-                <a
-                  style={{ cursor: "pointer", textAlign: "center" }}
-                  onClick={() => {
-                    Swal.fire({
-                      customClass: "help-redirect-icon",
-                      text:
-                        "Curriki Help will open in a new tab in your browser. Click Open to proceed or Cancel to stay where you are.",
-                      showCancelButton: true,
-                      confirmButtonText: "Open",
-                    }).then((result) => {
-                      if (result.isConfirmed) {
-                        window.open(
-                          "https://www.currikistudio.org/help/",
-                          "_blank"
-                        );
-                      } else if (result.isDenied) {
-                        Swal.close();
-                      }
-                    });
-                  }}
-                  // href="https://www.currikistudio.org/help/"
-                  // target="_blank"
-                >
-                  <HelpSvg primaryColor={primaryColor} />
-
-                  <p className="header-icon-text">Help</p>
-                </a>
-              </li>
 
               <HeaderNotification />
 
